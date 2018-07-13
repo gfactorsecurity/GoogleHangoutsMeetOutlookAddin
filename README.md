@@ -6,7 +6,7 @@ Google Hangouts Meet allows for the creation of a phone number and PIN to join a
 
 When a meeting is created using this addin, a new Google Calendar event is created using the Google Calendars API, with a Hangouts Meet event attached to it.  This event is created starting at the current time and ending an hour from the current time.  We determined that despite a calendar event needing to be created to schedule a Hangouts Meet event, once the original calendar event is deleted, the scheduled Meet session still remains valid.  In order to not junk up Google Calendar (for users who do not use the calendar as part of G-Suite), we delete the created calendar event.
 
-Requirements:
+**Requirements:**
  * Web server with valid SSL certificate
  * G-Suite account for users of addin (does not work with free Google accounts; Hangouts Meet is only available with paid G-Suite)
  * Hangouts Meet enabled for G-Suite (this must be enabled by your G-Suite administrator)
@@ -29,7 +29,7 @@ Installation Instructions:
 6) The addin should appear in Outlook for Windows, Outlook for Mac, and OWA 2013/2016/365.  The icon is the green Google Hangouts logo.
 
 
-Usage Instructions:
+**Usage Instructions:**
 1) Create a new message or calendar appointment in Outlook.
 
 2) Click the "Settings" button from the toolbar (if using Outlook on the desktop).  Click the green Hangouts logo icon if using OWA.
@@ -39,9 +39,11 @@ Usage Instructions:
 4) Once signed in, click the "Create Event" button on the sidebar, or click the "Create Meeting" button (both buttons are from this addin; only 1 will show in OWA).
 
 
-Troubleshooting:
+**Troubleshooting:**
  * Ensure you have a valid (trusted) SSL certificate installed on the website hosting the addin.
  * Go to the URL of index.html from your web browser to verify you can access the files in question and authorize your account.
  * If buttons are greyed out when creating a new message or appointment, try disabling Outlook COM Add-Ins to see if there is a conflict.  In testing, the Citrix Sharefile Outlook addin (native, not Office.JS) conflicted.  This was resolved by installing the latest version of Sharefile, or alternatively installing the Office.JS/Office Store version of the plugin.
 
 
+**Disclaimer:**
+This free addin is created by G-Factor Security, LLC.  It is licensed under the GNU GPL v3.  You are free to use this addin for free or commercial purposes, however if you redistribute this software you must provide the source code to anyone who may request it from you.  Hangouts and Hangouts Meet are property of Google, and Outlook is property of Microsoft.  Any trademarks or images included in this package that are not owned by G-Factor Security, LLC are used under according to Fair Use laws.  If any copyright holder takes issue with this, please contact info [at] gfsec [dot] net for support.
