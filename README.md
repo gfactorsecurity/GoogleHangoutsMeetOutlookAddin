@@ -55,4 +55,5 @@ Installation Instructions:
 
 
 **Disclaimer:**
+
 This free addin is created by G-Factor Security, LLC.  It is licensed under the GNU GPL v3.  You are free to use this addin for free or commercial purposes, however if you redistribute this software you must provide the source code to anyone who may request it from you.  Hangouts and Hangouts Meet are property of Google, and Outlook is property of Microsoft.  Any trademarks or images included in this package that are not owned by G-Factor Security, LLC are used under according to Fair Use laws.  If any copyright holder takes issue with this, please contact info [at] gfsec [dot] net for support.
