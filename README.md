@@ -1,6 +1,6 @@
-Google Hangouts Meet Outlook AddIn
+# Google Hangouts Meet Outlook AddIn
 
-This is an addin written using the Office JavaScript API to allow for the creation of Google Hangouts Meet events via Outlook.
+### This is an addin written using the Office JavaScript API to allow for the creation of Google Hangouts Meet events via Outlook.
 
 Google Hangouts Meet allows for the creation of a phone number and PIN to join a conference, in addition to a URL for a normal video chat.  As of present, there is no
 official Outlook plugin from Google that supports Meet.  In order to facilitate the creation of Meet events with phone numbers and PINs, I created this addin.
@@ -11,10 +11,10 @@ to schedule a Hangouts Meet event, once the original calendar event is deleted, 
 (for users who do not use the calendar as part of G-Suite), we delete the created calendar event.
 
 Requirements:
-**Web server with valid SSL certificate
-**G-Suite account for users of addin (does not work with free Google accounts; Hangouts Meet is only available with paid G-Suite)
-**Hangouts Meet enabled for G-Suite (this must be enabled by your G-Suite administrator)
-**Google account (free or paid) to generate API Key and Client ID for addin
+  *Web server with valid SSL certificate
+  *G-Suite account for users of addin (does not work with free Google accounts; Hangouts Meet is only available with paid G-Suite)
+  *Hangouts Meet enabled for G-Suite (this must be enabled by your G-Suite administrator)
+  *Google account (free or paid) to generate API Key and Client ID for addin
 
 Installation Instructions:
 1) Modify the files below to replace the string '<your_website_here'> with the hostname of your website (for example, www.mysite.com).  Do NOT include "https://".
