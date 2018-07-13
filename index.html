@@ -1,0 +1,98 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Hangouts Meet</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.debug.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css"/>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css"/>
+    <script type="text/javascript" src="https://<your_website_here>/hangoutsmeetoutlookaddin/function-file/function-file.js"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript" src="https://<your_website_here>/hangoutsmeetoutlookaddin/jquery.min.js"></script>
+    <script type="text/javascript" src="https://<your_website_here>/hangoutsmeetoutlookaddin/fabric.min.js"></script>
+    <link href="https://<your_website_here>/hangoutsmeetoutlookaddin/app.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome">
+    <div class="ms-Fabric content-main">
+
+
+        <h2>Google Hangouts Meet</h2>
+        
+
+        <p id="status"></p>
+        <button id="create-button" style="display: none;">Create Event</button>
+        <br><br>
+        <button id="authorize-button" style="display: none;">Sign In</button>
+        <button id="signout-button" style="display: none;">Sign Out</button>
+
+
+        <pre id="content"></pre>
+
+        <script type="text/javascript">
+            var authorizeButton = document.getElementById('authorize-button');
+            var signoutButton = document.getElementById('signout-button');
+            var createButton = document.getElementById('create-button');
+            var statusP = document.getElementById('status');
+
+
+            function handleClientLoadPane() {
+                gapi.load('client:auth2', initClientPane);
+            }
+
+            function initClientPane() {
+                gapi.client.init({
+                    apiKey: API_KEY,
+                    clientId: CLIENT_ID,
+                    discoveryDocs: DISCOVERY_DOCS,
+                    scope: SCOPES
+                }).then(function () {
+                    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatusPane);
+                    updateSigninStatusPane(gapi.auth2.getAuthInstance().isSignedIn.get());
+                    authorizeButton.onclick = handleAuthClick;
+                    signoutButton.onclick = handleSignoutClick;
+                    createButton.onclick = createOnClick;
+                });
+            }
+
+            
+            /*
+            function handleSignoutClickPane(event) {
+                gapi.auth2.getAuthInstance().signOut();
+                console.log(event);
+                statusUpdate("blue-icon-16", "Signed Out of Google Hangouts Meet");
+
+            }
+            */
+
+            function updateSigninStatusPane(isSignedIn) {
+                if (isSignedIn) {
+                    authorizeButton.style.display = 'none';
+                    signoutButton.style.display = 'block';
+                    createButton.style.display = 'block';
+                    statusP.textContent =
+                        'Signed in to Google.  Use the "Create Meeting" button on the toolbar or below to add a meeting to the message.';
+                } else {
+                    authorizeButton.style.display = 'block';
+                    signoutButton.style.display = 'none';
+                    createButton.style.display = 'none';
+                    statusP.textContent = 'Click "Sign In" to log into Google.';
+                }
+            }
+
+            handleClientLoadPane();
+        </script>
+
+        <!--<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>-->
+        <!--<script src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>-->
+
+    </div>
+</body>
+
+</html>
