@@ -38,6 +38,12 @@ Installation Instructions:
 
 4) Once signed in, click the "Create Event" button on the sidebar, or click the "Create Meeting" button (both buttons are from this addin; only 1 will show in OWA).
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+![alt text](https://github.com/gfactorsecurity/GoogleHangoutsMeetOutlookAddin/blob/master/readme_img/Settings_Button.png "Settings button")
+![alt text](https://github.com/gfactorsecurity/GoogleHangoutsMeetOutlookAddin/blob/master/readme_img/Settings_Sidebar.png "Settings sidebar")
+![alt text](https://github.com/gfactorsecurity/GoogleHangoutsMeetOutlookAddin/blob/master/readme_img/Meeting_Inserted.png "Meeting inserted")
+
 
 **Troubleshooting:**
  * Ensure you have a valid (trusted) SSL certificate installed on the website hosting the addin.
