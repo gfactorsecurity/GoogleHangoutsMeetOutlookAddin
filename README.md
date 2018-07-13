@@ -11,24 +11,20 @@ to schedule a Hangouts Meet event, once the original calendar event is deleted, 
 (for users who do not use the calendar as part of G-Suite), we delete the created calendar event.
 
 Requirements:
-  *Web server with valid SSL certificate
-  *G-Suite account for users of addin (does not work with free Google accounts; Hangouts Meet is only available with paid G-Suite)
-  *Hangouts Meet enabled for G-Suite (this must be enabled by your G-Suite administrator)
-  *Google account (free or paid) to generate API Key and Client ID for addin
+ * Web server with valid SSL certificate
+ * G-Suite account for users of addin (does not work with free Google accounts; Hangouts Meet is only available with paid G-Suite)
+ * Hangouts Meet enabled for G-Suite (this must be enabled by your G-Suite administrator)
+ * Google account (free or paid) to generate API Key and Client ID for addin
 
 Installation Instructions:
-1) Modify the files below to replace the string '<your_website_here'> with the hostname of your website (for example, www.mysite.com).  Do NOT include "https://".
-NOTE: Site MUST be HTTPS and have a valid SSL certificate installed.
-**function-file/function-file.html
-**index.html
-**google-hangouts-meet-outlook-addin-manifest.xml
+1) Modify the files below to replace the string '<your_website_here'> with the hostname of your website (for example, www.mysite.com).  Do NOT include "https://".  **NOTE**: Site MUST be HTTPS and have a valid SSL certificate installed.
+   * function-file/function-file.html
+   * index.html
+   * google-hangouts-meet-outlook-addin-manifest.xml
 
-2) Modify the manifest file (google-hangouts-meet-outlook-addin-manifest.xml) to include a random GUID below the line that says "Your GUID Below".
-NOTE: You can use the following site to generate a random GUID: https://www.guidgenerator.com/online-guid-generator.aspx
+2) Modify the manifest file (google-hangouts-meet-outlook-addin-manifest.xml) to include a random GUID below the line that says "Your GUID Below".  **NOTE**: You can use the following site to generate a random GUID: https://www.guidgenerator.com/online-guid-generator.aspx
 
-3) Create a new Google Developer project and take the API Key and Client ID created and put them into function-file/function-file.js.  Replace "<your_client_id_here"
-with the Client ID and replace "<your_api_key_here>" with the API Key.
-NOTE: For help creating the project and generating the required info, see this site: https://docs.simplecalendar.io/google-api-key/
+3) Create a new Google Developer project and take the API Key and Client ID created and put them into function-file/function-file.js.  Replace "<your_client_id_here" with the Client ID and replace "<your_api_key_here>" with the API Key.  **NOTE**: For help creating the project and generating the required info, see this site: https://docs.simplecalendar.io/google-api-key/
 
 4) Upload the modified documents to your website and place them in a folder at the root of the webserver called "hangoutsmeetoutlookaddin".
 NOTE: You can change the path by modifying the files from Step 1 and updating the path in every location where you placed your website name.
